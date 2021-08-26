@@ -27,6 +27,7 @@ return [
 	'logout'            => 'Log Out',
 	'accountNavigation' => 'Account Navigation',
 	'cards'             => 'My Cards',
+	'add-content'       => 'Add Content',
 
 
 ];
