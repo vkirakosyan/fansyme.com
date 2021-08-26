@@ -67,15 +67,15 @@
 						<?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('followbutton', [ 'profileId' => $profile->id ])->dom;
-} elseif ($_instance->childHasBeenRendered('KmWM11B')) {
-    $componentId = $_instance->getRenderedChildComponentId('KmWM11B');
-    $componentTag = $_instance->getRenderedChildComponentTagName('KmWM11B');
+} elseif ($_instance->childHasBeenRendered('RemmcXh')) {
+    $componentId = $_instance->getRenderedChildComponentId('RemmcXh');
+    $componentTag = $_instance->getRenderedChildComponentTagName('RemmcXh');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('KmWM11B');
+    $_instance->preserveRenderedChild('RemmcXh');
 } else {
     $response = \Livewire\Livewire::mount('followbutton', [ 'profileId' => $profile->id ]);
     $dom = $response->dom;
-    $_instance->logRenderedChild('KmWM11B', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('RemmcXh', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>

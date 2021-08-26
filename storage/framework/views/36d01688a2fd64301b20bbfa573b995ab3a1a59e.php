@@ -48,7 +48,7 @@
     <link rel="apple-touch-icon" href="/<?php echo e(cache()->has('pwa_512x512') ? cache()->get('pwa_512x512') : opt('pwa_512x512', config('pwa.manifest.icons.512x512.path'))); ?>">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@latest/pace-theme-default.min.css">
 
-    
+
     <link href="/<?php echo e(cache()->has('pwa_72x72') ? cache()->get('pwa_72x72') : opt('pwa_72x72', config('pwa.manifest.splash.640x1136'))); ?>" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
     <link href="/<?php echo e(cache()->has('pwa_750x1334') ? cache()->get('pwa_750x1334') : opt('pwa_750x1334', config('pwa.manifest.splash.750x1334'))); ?>" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
     <link href="/<?php echo e(cache()->has('pwa_1242x2208') ? cache()->get('pwa_1242x2208') : opt('pwa_1242x2208', config('pwa.manifest.splash.1242x2208'))); ?>" media="(device-width: 621px) and (device-height: 1104px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
@@ -60,7 +60,7 @@
     <!-- Tile for Win8 -->
     <meta name="msapplication-TileColor" content="<?php echo e(config('pwa.manifest.background_color')); ?>">
     <meta name="msapplication-TileImage" content="/<?php echo e(cache()->has('pwa_512x512') ? cache()->get('pwa_512x512') : opt('pwa_512x512', config('pwa.manifest.icons.512x512.path'))); ?>">
-    
+
 
     <script type="text/javascript">
       // Initialize the service worker
@@ -149,7 +149,7 @@
   <body>
   <div id="wrap">
   <div id="main">
-  
+
 
     <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" class="d-none">
         <?php echo csrf_field(); ?>
@@ -157,6 +157,8 @@
 
     <div class="container">
     <?php echo $__env->make( 'partials/topnavi' , \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+      <br><br><br>
+    <?php echo $__env->make('flash-message', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     </div>
 
     <main role="main">
@@ -251,7 +253,7 @@
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
         swal({ title   : '', icon    : 'error', text : errorList });
-        
+
     </script>
     <?php endif; ?>
 

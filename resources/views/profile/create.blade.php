@@ -11,18 +11,6 @@
 @yield( 'account_section' )
 <div>
 
-@if( isset( $p ) AND $p->isVerified != 'Yes' )
-<div class="alert alert-danger" role="alert">
-	@if( $p->isVerified == 'No' )
-		@lang( 'dashboard.not-verified' )
-		<br>
-		<a href="{{ route( 'profile.verifyProfile' ) }}">@lang('dashboard.verify-profile')</a>
-	@elseif( $p->isVerified = 'Pending' )
-		@lang( 'dashboard.verification-pending' )
-	@endif
-</div>
-@endif
-
 <form method="POST" action="{{ route( 'storeMyPage' ) }}" enctype="multipart/form-data">
 @csrf
 <div class="shadow-sm card add-padding">

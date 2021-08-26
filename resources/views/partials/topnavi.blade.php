@@ -2,21 +2,21 @@
 <div class="collapse navbar-collapse d-none d-sm-none d-md-block" id="navbarsExampleDefault">
   <ul class="topnavi">
     <li class="nav-item">
-      <a class="nav-link" href="/"><img src="images/icons/home.svg" alt="Home Icon"></a>
+      <a class="nav-link" href="/"><img src="{{ asset("images/icons/home.svg") }}" alt="Home Icon"></a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="{{ route('notifications.index') }}"><img src="images/icons/bell.svg" alt="Bell Icon"></a>
+      <a class="nav-link" href="{{ route('notifications.index') }}"><img src="{{ asset("images/icons/bell.svg") }}" alt="Bell Icon"></a>
     </li>
     <li class="nav-item">
       <a class="nav-link add-content" href="/">+</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="{{ route('messages.inbox') }}"><img src="images/icons/chat-dots.svg" alt="Chat-Dots Icon"></a>
+      <a class="nav-link" href="{{ route('messages.inbox') }}"><img src="{{ asset("images/icons/chat-dots.svg") }}" alt="Chat-Dots Icon"></a>
     </li>
   </ul>
   <div class="hamburger-content">
     <button class="hamburger" type="button" data-toggle="dropdown">
-      <img src="images/icons/menu.svg" alt="Menu Icon">
+      <img src="{{ asset("images/icons/menu.svg") }}" alt="Menu Icon">
     </button>
     <ul class="flex-column dropdown-menu">
       @if(! auth()->guest() )

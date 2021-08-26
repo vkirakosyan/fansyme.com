@@ -48,7 +48,7 @@
     <link rel="apple-touch-icon" href="/{{ cache()->has('pwa_512x512') ? cache()->get('pwa_512x512') : opt('pwa_512x512', config('pwa.manifest.icons.512x512.path')) }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@latest/pace-theme-default.min.css">
 
-    
+
     <link href="/{{ cache()->has('pwa_72x72') ? cache()->get('pwa_72x72') : opt('pwa_72x72', config('pwa.manifest.splash.640x1136')) }}" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
     <link href="/{{ cache()->has('pwa_750x1334') ? cache()->get('pwa_750x1334') : opt('pwa_750x1334', config('pwa.manifest.splash.750x1334')) }}" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
     <link href="/{{ cache()->has('pwa_1242x2208') ? cache()->get('pwa_1242x2208') : opt('pwa_1242x2208', config('pwa.manifest.splash.1242x2208')) }}" media="(device-width: 621px) and (device-height: 1104px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
@@ -60,7 +60,7 @@
     <!-- Tile for Win8 -->
     <meta name="msapplication-TileColor" content="{{ config('pwa.manifest.background_color') }}">
     <meta name="msapplication-TileImage" content="/{{ cache()->has('pwa_512x512') ? cache()->get('pwa_512x512') : opt('pwa_512x512', config('pwa.manifest.icons.512x512.path')) }}">
-    
+
 
     <script type="text/javascript">
       // Initialize the service worker
@@ -146,7 +146,7 @@
   <body>
   <div id="wrap">
   <div id="main">
-  
+
 
     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
         @csrf
@@ -154,6 +154,8 @@
 
     <div class="container">
     @include( 'partials/topnavi' )
+      <br><br><br>
+    @include('flash-message')
     </div>
 
     <main role="main">
@@ -247,7 +249,7 @@
         @endforeach
 
         swal({ title   : '', icon    : 'error', text : errorList });
-        
+
     </script>
     @endif
 
