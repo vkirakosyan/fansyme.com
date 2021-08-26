@@ -145,6 +145,7 @@ h1,h2,h3,h4,h5,h6 {
     font-family: 'Darker Grotesque';
     font-weight: bold;
     border-bottom: 1px solid #e5e3dd;
+    padding: 0 .5rem;
 }
 .navbar-brand {
     font-size: 22px;

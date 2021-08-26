@@ -16,13 +16,9 @@
 </div>
 </div><!-- /.col-md-3 -->
 
-<div class="col-md-8">
+<div class="col-md-12">
 @yield( 'account_section' )
-</div><!-- /.col-md-8 -->
-
-<div class="col-md-4 d-none d-sm-block">
-@include( 'partials/dashboardnavi' )
-</div><!-- /.col-md-3 -->
+</div><!-- /.col-md-12 -->
 
 </div><!-- ./row ( main ) -->
 </div><!-- /.container -->

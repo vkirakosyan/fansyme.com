@@ -3,6 +3,7 @@
 return [
 	'about'                 => 'About',
 	'myProfile'             => 'My Profile',
+	'editProfile'           => 'Edit Profile',
 	'creatorSetup'          => 'Setup Membership Fee',
 	'createPost'            => 'Create Post',
 	'thanksMessage'         => 'Thanks Message',

@@ -27,7 +27,7 @@
 @csrf
 <div class="shadow-sm card add-padding">
 <br/>
-<h2 class="ml-2"><i class="far fa-edit mr-2"></i>@lang('dashboard.myProfile')</h2>
+<h2 class="ml-2"><i class="far fa-edit mr-2"></i>@lang('dashboard.editProfile')</h2>
 @lang( 'dashboard.aboutText' )
 <hr>
 <br/>
