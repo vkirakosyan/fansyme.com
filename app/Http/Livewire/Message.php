@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\User;
+use App\Profile;
 use App\MessageMedia;
 use App\Message as Msg;
 use Livewire\Component;
@@ -19,6 +20,8 @@ class Message extends Component
     public $messages;
     public $message;
     public $toName;
+    public $toUserName;
+    public $toUserPic;
     public $toUserId;
     public $lockType = 'Free';
     public $unlockPrice;
@@ -229,10 +232,14 @@ class Message extends Component
 
             // set messages
             $messages = $this->getMessages($user);
-
+            $profile = Profile::select('username', 'profilePic')->where('user_id', $user)->first();
+//dd($profile);
             $this->messages = $messages;
             $this->toName = $toName->name;
             $this->toUserId = $user;
+            $this->toUserName = $profile->username;
+//            $this->toUserName = $profile;
+            $this->toUserPic = $profile->profilePic;
 
             // $this->emit('scroll-to-last');
         } catch (\Exception $e) {

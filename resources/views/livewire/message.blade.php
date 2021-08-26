@@ -22,14 +22,14 @@
         <div class="row no-gutters pt-2 pb-2 border-top">
         <div class="col-12 col-sm-12 col-md-2">
         <div class="profilePicXS mt-0 ml-0 mr-2 ml-2 shadow-sm">
-		    <a href="javascript:scrollToLast()"  class="select-message-user" wire:click="openConversation({{ $p->id }})">
-			    <img src="{{  $p->profile->profilePicture }}" alt="" width="40" height="40" class="select-message-user">
-		    </a>
+            <a href="{{ route('profile.show', ['username' => $p->profile->username]) }}" class="d-none d-sm-none d-md-block text-dark select-message-user" >
+                <img src="{{ secure_image($p->profile->profilePic, 30, 30) }}" alt="" width="40" height="40" class="select-message-user">
+            </a>
         </div>
         </div>
 
         <div class="col-12 col-sm-12 col-md-10">
-            <a href="{{ route('profile.show', ['username' => $p->profile->username]) }}" class="d-none d-sm-none d-md-block text-dark select-message-user" >
+            <a href="javascript:scrollToLast()" class="d-none d-sm-none d-md-block text-dark select-message-user" wire:click="openConversation({{ $p->id }})">
                 {{ $p->profile->name }}
             </a>
             <small>
@@ -64,10 +64,14 @@
     </div>
 
     <div class="col-12 col-sm-8 col-md-8 col-lg-8 border-top" id="messages-container">
-
     @if(isset($toName) AND !empty($toName))
 
-    <div class="p-2 text-secondary">
+            <div class="p-2 text-secondary">
+            @if(isset($toUserName))
+            <a href="{{ route('profile.show', ['username' => $toUserName]) }}" class="d-inline-block d-sm-none d-md-none text-dark select-message-user" >
+                <img src="{{ secure_image($toUserPic, 30, 30) }}" alt="" width="30" height="30" style="border-radius: 50%" class="select-message-user">
+            </a>
+        @endif
         @lang('messages.to'): {{  $toName }}
     </div>
 
@@ -89,7 +93,7 @@
                     <small class="text-secondary ml-2">
                         @if($msg->is_read == 'No')
                             <i class="fas fa-check-double"></i> 
-                        @else
+                        @elsetoUserName
                             <i class="fas fa-check-circle"></i> 
                         @endif
                         {{ $msg->created_at->diffForHumans() }}
